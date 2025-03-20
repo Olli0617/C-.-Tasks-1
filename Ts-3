@@ -1,0 +1,27 @@
+using System;
+public class HelloWorld
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:"); //Просим ввести пользователя первое число
+        int a = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите второе число:"); // Просим ввести пользователя второе число
+        int b = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите операцию, любую из 4х предложенных (+, -, *, /):"); //Просим выбрать операцию с числами
+        string zn = Console.ReadLine(); 
+        switch(zn) // В зависимости от выбора операции пользователем выводим полученное значение
+        {
+          case "-": Console.WriteLine(a - b); break;
+           case "+": Console.WriteLine(a + b); break;
+           case "*": Console.WriteLine(a * b); break;
+          case "/": 
+                     if (b == 0) {
+                          Console.WriteLine("Ошибка. Делить на 0 нельзя"); // Проверяем, если пользователь хочет применить деление на 0. Выводим ошибку
+                          break;
+                     }
+                     else {
+                          Console.WriteLine(a / b); break;
+                     }
+        }
+    }
+}
