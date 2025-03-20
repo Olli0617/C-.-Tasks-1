@@ -1,0 +1,20 @@
+using System;
+public class HelloWorld
+{
+    static void Main()
+    {
+        string mounth1 = Console.ReadLine(); //Считываем введённое пользователем число
+        if (int.TryParse(mounth1, out int mounth) && mounth >= 1 && mounth <= 12) { // Проверяем корректность введённых данных
+            switch(mounth) 
+            {
+              case 12 or 1 or 2: Console.WriteLine("Зима"); break; // В зависимости от значения выводим времена года
+              case 3 or 4 or 5: Console.WriteLine("Весна"); break;
+              case 6 or 7 or 8: Console.WriteLine("Лето"); break;
+              case 9 or 10 or 11: Console.WriteLine("Осень"); break;
+            }
+        }    
+      else {
+            Console.WriteLine("Вы ввели некорректные данные. Попробуйте ввести заново"); // Сообщение пользователю о некорректности данных
+       }
+    }
+}
