@@ -1,0 +1,25 @@
+using System;
+public class HelloWorld
+{
+    static void Main()
+    {
+        string hours1 = Console.ReadLine(); //Считываем номер дня от пользователя
+        if (int.TryParse(hours1, out int hours) && hours <= 23) { // Проверяем, корректные ли данные введены
+               if (hours >= 0 & hours <= 5) { // В связи с диапазоном введённого числа выводим правильную часть дня
+                   Console.WriteLine("Ночь");
+               }
+               else if (hours >= 6 & hours <= 11){
+                   Console.WriteLine("Утро");
+               }
+               else if (hours >= 12 & hours <= 17) {
+                    Console.WriteLine("День");
+               }
+               else {
+                    Console.WriteLine("Вечер");
+               }
+        }
+        else {
+               Console.WriteLine("Вы ввели некорректные данные. Попробуйте ввести заново"); // Сообщение пользователю, если данные введены некорректно
+        }
+    }
+}
